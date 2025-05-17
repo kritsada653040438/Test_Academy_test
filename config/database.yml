@@ -18,12 +18,13 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV["DATABASE_URL_DEV"] %>
 
 
 development:
   <<: *default
   database: academy_quest_development
+  url: <%= ENV["DATABASE_URL_DEV"] %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
