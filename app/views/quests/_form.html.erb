@@ -16,6 +16,11 @@
     <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": quest.errors[:name].none?, "border-red-400 focus:outline-red-600": quest.errors[:name].any?}] %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :details %>
+    <%= form.text_field :details, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": quest.errors[:details].none?, "border-red-400 focus:outline-red-600": quest.errors[:details].any?}] %>
+  </div>
+
   <div class="my-5 flex items-center gap-2">
     <%= form.label :status %>
     <%= form.checkbox :status, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": quest.errors[:status].none?, "border-red-400 focus:outline-red-600": quest.errors[:status].any?}] %>

@@ -14,6 +14,7 @@ class QuestsTest < ApplicationSystemTestCase
     visit quests_url
     click_on "New quest"
 
+    fill_in "Details", with: @quest.details
     fill_in "Name", with: @quest.name
     check "Status" if @quest.status
     click_on "Create Quest"
@@ -26,6 +27,7 @@ class QuestsTest < ApplicationSystemTestCase
     visit quest_url(@quest)
     click_on "Edit this quest", match: :first
 
+    fill_in "Details", with: @quest.details
     fill_in "Name", with: @quest.name
     check "Status" if @quest.status
     click_on "Update Quest"

@@ -65,6 +65,6 @@ class QuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quest_params
-      params.expect(quest: [ :name, :status ])
+      params.expect(quest: [ :name, :details, :status ])
     end
 end
