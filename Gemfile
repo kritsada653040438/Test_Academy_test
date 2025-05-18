@@ -65,3 +65,5 @@ group :test do
 end
 
 gem "dotenv-rails", "~> 3.1"
+
+gem "hotwire-rails", "~> 0.1.3"
