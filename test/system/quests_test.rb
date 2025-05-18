@@ -7,12 +7,13 @@ class QuestsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit quests_url
-    assert_selector "h1", text: "Quests"
+    assert_selector "h1", text: "My Academy Quest"
   end
 
-  test "should create quest" do
+  test "should create first quest" do
     visit quests_url
-    click_on "New quest"
+    puts page.text
+    click_on "Add quest"
 
     fill_in "Details", with: @quest.details
     fill_in "Name", with: @quest.name
@@ -39,7 +40,10 @@ class QuestsTest < ApplicationSystemTestCase
   test "should destroy Quest" do
     visit quest_url(@quest)
     accept_confirm { click_on "Destroy this quest", match: :first }
-
+    page.accept_confirm if page.has_css?("div.confirm")
     assert_text "Quest was successfully destroyed"
+  end
+  teardown do
+    Quest.delete_all # ลบข้อมูล Quest ทั้งหมดหลังแต่ละ test
   end
 end
